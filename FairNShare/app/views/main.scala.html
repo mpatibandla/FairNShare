@@ -1,0 +1,53 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/jpg" href="@routes.Assets.at("images/Fair.jpg")">
+        <script src="@routes.Assets.at("javascripts/hello.js")" type="text/javascript"></script>
+    <!-- Bootstrap Core CSS -->
+    <link href="@routes.Assets.at("stylesheets/bootstrap.min.css")" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="@routes.Assets.at("stylesheets/plugins/metisMenu/metisMenu.min.css")" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="@routes.Assets.at("stylesheets/sb-admin-2.css")" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="stylesheets/font-awesome.min.css" rel="stylesheet">  -->
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        
+    </head>
+    <body>
+        @content
+        <!-- /#wrapper -->
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="@routes.Assets.at("javascripts/jquery-1.11.0.js")" type="text/javascript"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="@routes.Assets.at("javascripts/bootstrap.min.js")" type="text/javascript"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="@routes.Assets.at("javascripts/plugins/metisMenu/metisMenu.min.js")" type="text/javascript"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="@routes.Assets.at("javascripts/sb-admin-2.js")" type="text/javascript"></script>
+    </body>
+</html>
