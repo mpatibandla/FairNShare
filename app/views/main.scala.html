@@ -1,0 +1,22 @@
+@(title: String)(content: Html)
+<!-- main.scala.html title is given as "FairNShare" string from index.scala.html, and content is in the form of html -->
+<!DOCTYPE html>
+<!-- Start of html/page -->
+<html>
+    <head>
+    <!-- header section linking all the necessary files using routing -->
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/metisMenu.css")">
+        <script src="@routes.Assets.at("javascripts/hello.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/metisMenu.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/main.js")" type="text/javascript"></script>
+    </head>
+    <!-- End of Header section -->
+    <!-- content from index.scala.html and other scala.html files is passed into the bodypart of this page at content -->
+    <body>
+        @content
+    </body>
+    <!-- End of body/content of the page-->
+</html>
+<!-- End of page -->

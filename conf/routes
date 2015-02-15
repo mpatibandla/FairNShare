@@ -1,0 +1,37 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                         controllers.Application.index()
+POST	/person						controllers.Application.addPerson()
+GET		/calendar					controllers.Application.calendar()
+POST	/calendar					controllers.Application.changeCalendar()
+
+POST    /dashboard					controllers.Application.checkPerson()
+GET		/getPointsToComplete		controllers.Application.getPointsToComplete()
+GET    /showFriends			        controllers.Application.showFriends()
+POST    /createTask			        controllers.Application.createTask()
+GET    /showTasks			        controllers.Application.showTasks()
+GET    /logout					controllers.Application.endSession()
+GET     /showFriends			    controllers.Application.showFriends()
+POST    /createTask			        controllers.Application.createTask()
+GET     /showTasks			        controllers.Application.showTasks()
+GET		/getPointsToComplete		controllers.Application.getPointsToComplete()
+GET		/showIncompleteTasks		controllers.Application.showIncompleteTasks()
+GET		/showAllOverdueTasks		controllers.Application.showAllOverdueTasks()
+GET		/showMyOverdueTasks			controllers.Application.showMyOverdueTasks()
+POST    /taskUpdate/:taskID			controllers.Application.taskUpdate(taskID)
+GET     /showMyTasks				controllers.Application.showMyTasks()
+GET 	/showMyIncompleteTasks		controllers.Application.showMyIncompleteTasks()
+GET     /enteredText/:data			controllers.Application.checkIfReusable(data)
+#GET    /*name						controllers.Application.endSession(name)
+
+
+# on clicking the url of dashboard
+GET    /dashboard                  controllers.Application.redirectDashBoardURL()
+POST	/personUpdate/:taskID			controllers.Application.personUpdate(taskID)
+GET     /showMyRecurringTasks       controllers.Application.showMyRecurringTasks()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

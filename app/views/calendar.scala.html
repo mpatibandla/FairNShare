@@ -1,0 +1,12 @@
+@(message: String)
+
+@main("Calendar") {
+
+<form role="form" action="@routes.Application.changeCalendar()"
+					method="POST">
+<input type="date" name="calendar" id="calendar" placeholder="yyyy-mm-dd" required/>
+<button type="submit" class="btn btn-success">Change Date!</button>
+<p> @message </p>
+</form>
+
+}

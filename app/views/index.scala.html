@@ -1,0 +1,137 @@
+@(message: String)
+<!-- Linking all the necessary resource css and js files for the application and bootstrap to run -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script type='text/javascript' src='@routes.Assets.at("radio.js")'></script>
+<script 
+    type='text/javascript' src='@routes.Assets.at("loginpagevalidation.js")'></script>
+
+<!-- End of linking -->
+@import helper._ 
+
+<!-- main.scala.html is called with 2 parameters, "FairNShare" and the content below -->
+@main("FairNShare") {
+<!-- Header -->
+<div class="container">
+	<div class="col-sm-6">
+		<h1>
+			<a href="#">Fair n' Share</a>
+		</h1>
+		<p class="lead">{Schedule it.. Things go better!}</p>
+	</div>
+<!-- End of Header -->
+	<hr>
+
+<!-- form taking email id and password as input, and logging in the user -->
+	<div>
+		<form id="login" class="navbar-form navbar-right" name="MyForm" role="form"
+ 			action="@routes.Application.checkPerson()"  method="POST">
+			<div class="form-group">
+				<label for="email">Email&nbsp;</label>
+				<input type="email" placeholder="Email" name="email" id="email"
+					class="form-control" style="width:180px; height:35px" required>
+			</div>
+			<div class="form-group">
+				<label for="pwd">&nbsp;Password&nbsp;</label>
+				<input type="password" placeholder="Password" name="password"
+					id="password" class="form-control" style="width:170px; height:35px" required>
+			</div>
+			<button type="submit" class="btn btn-primary">Sign in</button>
+			<h4>@message</h4>
+		</form>
+		
+	</div>
+
+<!-- end of form -->
+<hr><hr><hr><hr><hr>
+<!-- Form for Registering the user into the system or Adding the person into the system -->
+	<form role="form" action="@routes.Application.addPerson()"
+		method="POST">
+		<h2>Sign Up.</h2>
+
+		<div class="row">
+
+			<div class="col-xs-12 col-sm-6 col-md-6">
+				<div class="form-group">
+					<label for="fname">First Name:</label>
+					<input type="text" name="fname" id="fname" class="form-control"
+						placeholder="First Name" tabindex="1" required>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6">
+				<div class="form-group">
+					<label for="lname">Last Name:</label>
+					<input type="text" name="lname" id="lname" class="form-control"
+						placeholder="Last Name" tabindex="2" required>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="dob">Date of Birthday:</label>
+			<input type="date" name="dob" id="dob" class="form-control"
+				placeholder="(mm/dd/yyyy)" tabindex="3">
+		</div>
+		<div class="form-group">
+			<label for="email">Email:</label>
+			<input type="email" name="email" id="email" class="form-control"
+				placeholder="Email" tabindex="4" required>
+		</div>
+		<div class="row">
+
+			<div class="col-xs-12 col-sm-6 col-md-6">
+				<div class="form-group">
+					<label for="pwd">Password:</label>
+					<input type="password" name="password" id="password"
+						class="form-control " placeholder="Password" tabindex="6" required>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6">
+				<div class="form-group">
+					<label for="pwd">Re-enter Password:</label>
+					<input type="password" name="password_confirmation"
+						id="password_confirmation" class="form-control"
+						placeholder="Confirm Password" tabindex="6" required>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+		<table style="width:50%" padding=5px>
+			<tr>
+				<label for="gender">Gender:</label>
+			</tr>
+			<tr>
+				
+				<td><input type="radio" name="sex" id="gender1" value="male" >Male<br></td>
+				
+				
+				<td><input type="radio" name="sex" id="gender2" value="female" >Female</td>
+				
+			</tr>
+		</table>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6">
+				<div class="form-group">
+					<label for="ph.no"><br>Ph. No:</label>
+					<input type="tel" name="ph_no" id="ph_no" class="form-control"
+						placeholder="(___-___-____)" tabindex="8">
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-left:5px">
+				<input type="submit" value="Register" class="btn btn-primary" tabindex="9">
+			</div>
+		</div>
+	</form>
+</div>
+<!-- End of Form for Registering the user  and Adding a new user -->
+}
